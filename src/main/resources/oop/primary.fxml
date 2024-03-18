@@ -72,7 +72,7 @@
           <TableColumn prefWidth="102.0" text="Total" />
         </columns>
       </TableView>
-      <CheckBox id="search_switch" fx:id="search_switch" layoutX="40.0" layoutY="82.0" mnemonicParsing="false" onAction="#switch_search_type" prefHeight="39.0" prefWidth="109.0" text="Nama Barang" />
+      <!-- <CheckBox id="search_switch" fx:id="search_switch" layoutX="40.0" layoutY="82.0" mnemonicParsing="false" onAction="#switch_search_type" prefHeight="39.0" prefWidth="109.0" text="Nama Barang" /> -->
       <ComboBox fx:id="item_combobox" editable="true" layoutX="177.0" layoutY="131.0" prefHeight="39.0" prefWidth="150.0" />
       <Label layoutX="54.0" layoutY="192.0" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;" text="Harga">
          <opaqueInsets>
