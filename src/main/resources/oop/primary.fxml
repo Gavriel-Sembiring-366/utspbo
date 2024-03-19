@@ -43,6 +43,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.PrimaryController">
    <children>
@@ -62,27 +63,33 @@
          <children>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="278.0">
                <children>
-                  <Label fx:id="search_switch_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;" text="Nama Barang" textAlignment="CENTER">
+                  <Label fx:id="search_switch_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="120.0" text="Nama Barang" textAlignment="CENTER">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Label>
                   <!-- <CheckBox id="search_switch" fx:id="search_switch" layoutX="40.0" layoutY="82.0" mnemonicParsing="false" onAction="#switch_search_type" prefHeight="39.0" prefWidth="109.0" text="Nama Barang" /> -->
-                  <ComboBox fx:id="item_combobox" editable="true" prefHeight="39.0" prefWidth="150.0" />
+                  <ComboBox fx:id="item_combobox" editable="true" prefHeight="39.0" prefWidth="120.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="278.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;" text="Jumlah">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="120.0" text="Jumlah">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Label>
                   <TextField id="item_quantity" fx:id="item_quantity" prefHeight="39.0" prefWidth="120.0" />
                </children>
@@ -93,42 +100,34 @@
          <children>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="278.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;" text="Harga">
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" text="Harga">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Label>
-                  <Label prefHeight="39.0" prefWidth="150.0" style="-fx-border-color: black; -fx-padding: 10px;">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </Label>
+                  <TextField id="item_quantity" fx:id="item_quantity1" prefHeight="39.0" prefWidth="120.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="278.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;" text="Total">
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" text="Total">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Label>
-                  <Label prefHeight="39.0" prefWidth="120.0" style="-fx-border-color: black; -fx-padding: 10px;">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </Label>
+                  <TextField id="item_quantity" fx:id="item_quantity2" prefHeight="39.0" prefWidth="120.0" />
                </children>
             </HBox>
          </children>
