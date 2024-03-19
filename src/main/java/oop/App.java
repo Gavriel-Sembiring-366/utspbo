@@ -19,7 +19,7 @@ public class App extends Application {
     @SuppressWarnings("exports")
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 640, 720);
+        scene = new Scene(loadFXML("login"));
 
         stage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         stage.setTitle("My Kasir");
