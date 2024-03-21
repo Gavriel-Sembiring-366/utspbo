@@ -109,25 +109,27 @@ public class CounterController {
 
     @FXML
     private void tambahkan(ActionEvent event){
-        String nama = item_combobox.getValue();
-        if(nama.length() !=0 ){
+        String namaItem = item_combobox.getValue();
+        // System.out.println("Looking for " + nama + nama.length());
+        if(namaItem.length()!=0){
             try {
                 // int harga = barang.get(nama);
                 // int harga = 10;
-                String harga0 = find_harga_from_nama(nama);
+                int harga = find_harga_from_nama(namaItem);
+                // String harga0 = find_harga_from_nama(nama);
                 // if (harga0 == null){
                 //     throw new NullPointerException();
                 // }
                 // int harga = Integer.parseInt(harga0);
-                System.out.println(harga0);
+                // System.out.println(harga0);
                 int jumlah = Integer.parseInt(item_quantity.getText());
                 int total = Integer.parseInt(total_price.getText());
                 
-                // item_list.getItems().add(new Purchase(table_index, "kode", nama, harga, jumlah, total));
+                item_list.getItems().add(new Purchase(table_index, "kode", namaItem, harga, jumlah, total));
                 table_index++;
             }
             catch (NullPointerException nullError){
-                System.out.println("Maaf, untuk barang " + nama + " tidak tersedia");
+                System.out.println("Maaf, untuk barang " + namaItem + " tidak tersedia");
             }
             
             catch (NumberFormatException numError){
@@ -149,19 +151,22 @@ public class CounterController {
         }
     }
 
-    private String find_harga_from_nama(String nama){
+    private int find_harga_from_nama(String nama){
+        System.out.println("Looking for" + nama.toString() + nama.length());
         for (BarangList row: barang){
-            System.out.println(row.nama);
-            if (row.nama == nama){
+            System.out.println(row.nama + (row.nama.toString() == nama.toString()));
+            if (row.nama.equals(nama)){
                 System.out.println("ketemu" + nama);
                 System.out.println(row.harga);
-                return Integer.toString(row.harga);
+                // return Integer.toString(row.harga);
+                return row.harga;
                 // return "10000";
             }
         }
         // throw new NullPointerException("no nama");
         System.out.println("no " + nama);
-        return null;
+        // return null;
+        return 0;
     }
 
     @FXML
@@ -171,10 +176,10 @@ public class CounterController {
             try{
                 // int harga = barang.get(selectedItem);
                 // int harga = 10;
-                // int harga = find_harga_from_nama(selectedItem);
-                String harga = find_harga_from_nama(selectedItem);
-                // item_price.setText(Integer.toString(harga));
-                item_price.setText(harga);
+                int harga = find_harga_from_nama(selectedItem);
+                item_price.setText(Integer.toString(harga));
+                // String harga = find_harga_from_nama(selectedItem);
+                // item_price.setText(harga);
                 calculateTotalPrice();
             }
             catch (NullPointerException nullerror){
