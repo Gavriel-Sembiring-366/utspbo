@@ -7,7 +7,7 @@ public class LogInController {
     
     @FXML
     public void actionLogIn() throws IOException {
-        App.setRoot("primary");
+        App.setRoot("counter");
     }
 
 }
