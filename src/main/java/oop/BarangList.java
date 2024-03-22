@@ -1,5 +1,6 @@
 package oop;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
@@ -9,7 +10,8 @@ import javafx.collections.ObservableList;
 public class BarangList {
     public String kode;    
     public String nama;    
-    public int harga;
+    // public int harga;
+    public float harga;
 
     public static Dictionary<String, Integer> loadItem() {
         
@@ -28,18 +30,38 @@ public class BarangList {
         this.nama = "nama";
         this.harga = 0;
     }
-    public BarangList(String kode, String nama, int harga){
+    // public BarangList(String kode, String nama, int harga){
+    //     this.kode = kode;
+    //     this.nama = nama;
+    //     this.harga = harga;
+    // }
+    public BarangList(String kode, String nama, float harga){
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;
     }
     
-    
     public static ObservableList<BarangList> LoadItem2(){
+        // predefined data, will upgrade to database soon
         BarangList item1 = new BarangList("1111", "Apple", 10000);
-        BarangList item2 = new BarangList("1112", "Bpple", 11000);
-        BarangList item3 = new BarangList("1113", "Cpple", 12000);
-        ObservableList<BarangList> list_of_item = FXCollections.observableArrayList(item1, item2, item3);
+        BarangList item2 = new BarangList("1111", "Apple2", 10000);
+        BarangList item3 = new BarangList("1112", "Bpple", 11000);
+        BarangList item4 = new BarangList("1112", "Bpple2", 11000);
+        BarangList item5 = new BarangList("1113", "Cpple", 12000);
+        // BarangList item6 = new BarangList("", "", 0);
+        ObservableList<BarangList> list_of_item = FXCollections.observableArrayList(item1, item2, item3, item4, item5);
+        return list_of_item;
+    }
+
+    public static ObservableList<BarangList> LoadItemDb(){
+        DBConnector.initDBConnection();
+        ArrayList<Item> loadItem = Item.loadItemFromDB();
+
+        ObservableList<BarangList> list_of_item = FXCollections.observableArrayList();
+        for(Item itemClass : loadItem){
+            BarangList barangN = new BarangList(itemClass.id, itemClass.nama, itemClass.harga);
+            list_of_item.add(barangN);
+        }
         return list_of_item;
     }
 

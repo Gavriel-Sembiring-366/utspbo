@@ -1,7 +1,5 @@
 package oop;
 
-//import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -15,10 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 
 import java.io.IOException;
-// import java.util.Dictionary;
-// import java.util.Enumeration;
-// import java.util.HashMap;
-// import java.util.Map;
 
 
 public class CounterController {
@@ -43,22 +37,14 @@ public class CounterController {
     @FXML
     public TableView<Purchase> item_list;
 
-    // Dictionary<String, Integer> barang = BarangList.loadItem();
-    // ObservableList<String> items = FXCollections.observableArrayList();
-    
-    // Enumeration<String> keys = barang.keys();
     private int table_index = 1;
 
-    ObservableList<BarangList> barang = BarangList.LoadItem2();
+    ObservableList<BarangList> barang = BarangList.LoadItemDb();
     ObservableList<String> items = FXCollections.observableArrayList();
 
     public void initialize() {
         // Initialize the items
         
-        // while(keys.hasMoreElements()){
-        //     items.add(keys.nextElement());
-        // }
-
         for (BarangList row : barang){
             items.add(row.nama);
         }
@@ -66,14 +52,17 @@ public class CounterController {
         item_combobox.setItems(items);
 
         // bikin ngebug
+        // ada yg msh ngebug
         item_combobox.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
             String filterText = newValue.toLowerCase();
             ObservableList<String> filteredItems = items.filtered(item -> item.toLowerCase().startsWith(filterText));
-            if (filterText.length() != 0 && filteredItems.size() != 1 ){
+            boolean isNotFoundExact = filteredItems.filtered(item -> item.toLowerCase().equals(filterText)).size() == 0;
+            if (filterText.length() != 0 && isNotFoundExact){
                 item_combobox.setItems(filteredItems);
             }
             else {
                 item_combobox.setItems(items);
+                // System.out.println("ITEM : " +item_combobox.getItems());
             }
         });
 
@@ -101,33 +90,23 @@ public class CounterController {
         item_list.getColumns().add(hargaColumn);
         item_list.getColumns().add(jumlahColumn);
         item_list.getColumns().add(totalColumn);
-
-        // item_list.getItems().add(new Purchase(1, "kode", "nama", 10000, 2, 20000));
-        // item_list.getItems().add(new Purchase(1, "kode", "nama", 100, 2, 200));
-
     }   
 
     @FXML
     private void tambahkan(ActionEvent event){
-        String nama = item_combobox.getValue();
-        if(nama.length() !=0 ){
+        String namaItem = item_combobox.getValue();
+        if(namaItem.length()!=0){
             try {
-                // int harga = barang.get(nama);
-                // int harga = 10;
-                String harga0 = find_harga_from_nama(nama);
-                // if (harga0 == null){
-                //     throw new NullPointerException();
-                // }
-                // int harga = Integer.parseInt(harga0);
-                System.out.println(harga0);
+                float harga = findObjectFromNama(namaItem).harga;
                 int jumlah = Integer.parseInt(item_quantity.getText());
-                int total = Integer.parseInt(total_price.getText());
-                
-                // item_list.getItems().add(new Purchase(table_index, "kode", nama, harga, jumlah, total));
+                float total = harga * jumlah;
+                String kode = findObjectFromNama(namaItem).kode;
+
+                item_list.getItems().add(new Purchase(table_index, kode, namaItem, harga, jumlah, total));
                 table_index++;
             }
             catch (NullPointerException nullError){
-                System.out.println("Maaf, untuk barang " + nama + " tidak tersedia");
+                System.out.println("Maaf, untuk barang " + namaItem + " tidak tersedia");
             }
             
             catch (NumberFormatException numError){
@@ -137,44 +116,36 @@ public class CounterController {
     }
 
     private void calculateTotalPrice(){
-        int harga;
+        float harga;
         String jumlah;
         jumlah = item_quantity.getText();
         try{
-            harga = Integer.parseInt(item_price.getText());
-            total_price.setText(Integer.toString(Integer.parseInt(jumlah) * harga));
+            harga = Float.parseFloat(item_price.getText());
+            total_price.setText(Float.toString(Integer.parseInt(jumlah) * harga));
         }
         catch (NumberFormatException numError){
             System.out.println("gagal mendapatkan barang sebanyak " + jumlah + " ekor");
         }
     }
 
-    private String find_harga_from_nama(String nama){
+    private BarangList findObjectFromNama(String nama){
         for (BarangList row: barang){
-            System.out.println(row.nama);
-            if (row.nama == nama){
-                System.out.println("ketemu" + nama);
-                System.out.println(row.harga);
-                return Integer.toString(row.harga);
-                // return "10000";
+            if (row.nama.equals(nama)){
+                return row;
             }
         }
-        // throw new NullPointerException("no nama");
-        System.out.println("no " + nama);
-        return null;
+        // System.out.println("no " + nama);
+        throw new NullPointerException("no nama");
     }
 
     @FXML
     private void search_for_prices(ActionEvent event) {
+        // System.out.println("Im clean");
         String selectedItem = item_combobox.getValue();
-        if (selectedItem.length() != 0){
+        if (selectedItem != null){
             try{
-                // int harga = barang.get(selectedItem);
-                // int harga = 10;
-                // int harga = find_harga_from_nama(selectedItem);
-                String harga = find_harga_from_nama(selectedItem);
-                // item_price.setText(Integer.toString(harga));
-                item_price.setText(harga);
+                float harga = findObjectFromNama(selectedItem).harga;
+                item_price.setText(Float.toString(harga));
                 calculateTotalPrice();
             }
             catch (NullPointerException nullerror){
@@ -185,18 +156,6 @@ public class CounterController {
 
     @FXML
     private void tambah(ActionEvent event) {
-        // String jumlah = item_quantity.getText();
-        // System.out.println(jumlah);
-        // int jumlah = item_quantity.getText();
-
-        // try {
-        //     calculateTotalPrice();
-        // }
-        // catch (NumberFormatException e){
-        //     // System.out.println(e);
-        //     System.out.println("Please input corrent number of item quantity");
-        // }
-        
         calculateTotalPrice();
     }
 
@@ -207,14 +166,14 @@ public class CounterController {
 
     @FXML
     private void bayar(ActionEvent event){
-        int total_semua = 0;
+        float total_semua = 0;
         for (Purchase record : item_list.getItems()){
             System.out.println("Harga total dari " + record.table_nama + " adalah " + record.table_total);
             total_semua = total_semua + record.table_total;
         }
         System.out.println("Total semua : " + total_semua);
         // item_list.getItems().clear();
-        System.out.println("Requesting GUI for total harga Perhaps (?)");
+        System.out.println("Requesting GUI for total harga Mayhaps (?)");
     }
 
     @FXML
@@ -255,5 +214,9 @@ public class CounterController {
         //     String key = k.nextElement();
         //     System.out.println(barang.get(key));
         // }
+
+        // int a = 2;
+        // float b = 1.5f;
+        // System.out.println(a * b);
     }
 }

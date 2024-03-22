@@ -74,7 +74,7 @@
                      </font>
                   </Label>
                   <!-- <CheckBox id="search_switch" fx:id="search_switch" layoutX="40.0" layoutY="82.0" mnemonicParsing="false" onAction="#switch_search_type" prefHeight="39.0" prefWidth="109.0" text="Nama Barang" /> -->
-                  <ComboBox fx:id="item_combobox" editable="true" onAction="#search_for_prices" prefHeight="39.0" prefWidth="120.0" />
+                  <ComboBox fx:id="item_combobox" editable="true" onAction="#search_for_prices" prefHeight="39.0" prefWidth="120.0" promptText="Select" visibleRowCount="4" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="278.0">
