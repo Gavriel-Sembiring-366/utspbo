@@ -182,31 +182,6 @@ public class CounterController {
         check.setTotalPayment(total_semua);
         // System.out.println(check);
         App.setRootWithParent(parent);
-        // App.getRoot();
-        // item_list.getItems().clear();
-        // System.out.println("Requesting GUI for total harga Mayhaps (?)");
-        
-        // FXMLLoader loader = App.fxmlLoader("checkout");
-        // CheckoutController check = loader.getController();
-        // check.setTotalPayment(2.0f);
-
-        // App.setRoot();
-        // FXMLLoader loader = new FXMLLoader(getClass().getResource("checkout.fxml"));
-        // CheckoutController payment = loader.getController();
-
-        // System.out.println(payment);
-        // payment.setTotalPayment(total_semua);
-        // payment.setTotalPayment(total_semua);
-        // CheckoutController check = new CheckoutController();
-        // check.setTotalPayment(total_semua);
-        
-        // total_price.setText(Float.toString(total_semua));
-        // UserData user = new UserData();
-        // user.totalHarga = total_semua;
-
-        // this.totalPrice = total_semua;
-        // App.totalHarga = total_semua;
-        // App.setHarga(total_semua);
     }
 
     @FXML
@@ -216,40 +191,5 @@ public class CounterController {
     }
 
     public static void main(String args[]){
-        // Map tester = new HashMap<>();
-        // Map tester = new HashMap<>();
-        // tester.put("Apple", 5);
-        // System.out.println(tester.get("Apple"));
-        // Dictionary<String, Integer> barang = BarangList.loadItem();
-        // // System.out.println(barang.);
-        
-        // Enumeration<String> k = barang.keys();
-        // Enumeration<Integer> el = barang.elements();
-        
-        // System.out.println(k);
-        
-        // while(k.hasMoreElements()){
-            //         String key = k.nextElement();
-            //         System.out.println(key + " :  " + barang.get(key));
-            //     }
-        // System.out.println("Barang " + barang);
-        
-        // System.out.println("size : " +barang.size());
-        // System.out.println(k.nextElement());
-        // System.out.println(el.nextElement());
-
-        // int harga[] = {1,2,3};
-        // for (int x : harga){
-        //     System.out.println(x);
-        // }
-        
-        // while(k.hasMoreElements()){
-        //     String key = k.nextElement();
-        //     System.out.println(barang.get(key));
-        // }
-
-        // int a = 2;
-        // float b = 1.5f;
-        // System.out.println(a * b);
     }
 }
