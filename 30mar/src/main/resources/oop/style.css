@@ -1,0 +1,21 @@
+/* @font-face {
+    font-family: Montserrat;
+    src: url(Montserrat.ttf);
+} */
+/* @font-face {
+    font-family: 'alex brush regular';
+    src: url('AlexBrush_Regular.ttf');
+} */
+.label {
+    -fx-text-fill: #252525;
+    /* -fx-text-fill: #0000ff; */
+    /* -fx-font-family: "Montserrat"; */
+    /* -fx-font-family: 'alex brush regular'; */
+    /* font-family: ''; */
+    /* -fx-font-family: "STENCIL"; */
+    /* -fx-font-family: "Old English Text MT"; */
+}
+
+/* .button {
+
+} */
