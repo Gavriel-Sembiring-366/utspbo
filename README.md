@@ -12,7 +12,7 @@ update **src** folder
 - login
   - [x] user validator
   - [x] using username and password from database to login
-  - [x] password hashed into smitherness
+  - [x] password hashed into _smithereens_
         
 - adminis
   - [ ] item entry
