@@ -18,6 +18,11 @@ update **src** folder
   - [ ] item entry
   - [ ] activity log
   - [ ] purchase log
+
+- checkout
+  - [x] thousand separator
+  - [x] calculate change
+  - [ ] receipt
   
 update **pom.xml** file to include database dependancy
 
