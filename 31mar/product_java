@@ -1,0 +1,8 @@
+table 'item'
+    - id int(50)
+    - nama varchar(50)
+    - harga float
+
+table 'user'
+    - username varchar(20)
+    - password int(30)
