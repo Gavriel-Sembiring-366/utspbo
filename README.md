@@ -26,3 +26,4 @@ update **src** folder
   
 update **pom.xml** file to include database dependancy
 
+update ***product_java*** file for guide to creating database
