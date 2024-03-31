@@ -1,5 +1,10 @@
 ```Balance Changes 31 Maret 2024```
 
+> [!CAUTION]
+> scene admin blm mulai sama sekali.
+> activity log belum ada.
+> purchase log belum ada.
+
 update **src** folder
 
 - login
@@ -8,10 +13,9 @@ update **src** folder
   - [x] password hashed into smitherness
         
 - adminis
-  > [!IMPORTANT]
-  > blm mulai sama sekali.
+  - [ ] item entry
+  - [ ] activity log
+  - [ ] purchase log
   
 update **pom.xml** file to include database dependancy
 
-> [!IMPORTANT]
-> blm mulai sama sekali.
