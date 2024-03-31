@@ -6,7 +6,10 @@ update **src** folder
   - [x] user validator
   - [x] using username and password from database to login
   - [x] password hashed into smitherness
+        
 - adminis
+  > [!IMPORTANT]
+  > blm mulai sama sekali.
   
 update **pom.xml** file to include database dependancy
 
