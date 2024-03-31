@@ -3,6 +3,9 @@
 update **src** folder
 
 - login
+  - [x] user validator
+  - [x] using username and password from database to login
+  - [x] password hashed into smitherness
 - adminis
   
 update **pom.xml** file to include database dependancy
