@@ -1,11 +1,11 @@
 ```Balance Changes 31 Maret 2024```
 
 > [!CAUTION]
-> scene admin blm mulai sama sekali.
+> - scene admin blm mulai sama sekali.
 > 
-> activity log belum ada.
+> - activity log belum ada.
 > 
-> purchase log belum ada.
+> - purchase log belum ada.
 
 update **src** folder
 
