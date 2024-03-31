@@ -7,6 +7,10 @@
 > 
 > - purchase log belum ada.
 
+update **pom.xml** file to include database dependancy
+
+update ***product_java*** file for guide to creating database
+
 update **src** folder
 
 - login
@@ -23,7 +27,3 @@ update **src** folder
   - [x] thousand separator
   - [x] calculate change
   - [ ] receipt
-  
-update **pom.xml** file to include database dependancy
-
-update ***product_java*** file for guide to creating database
