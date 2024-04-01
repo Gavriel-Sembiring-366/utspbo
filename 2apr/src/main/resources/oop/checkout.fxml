@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="908.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.CheckoutController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="textTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Konfirmasi Bayar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="labelHarga" text="Total Harga">
+                           <HBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="textFieldCost" editable="false" prefHeight="50.0" prefWidth="300.0" style="-fx-font-family: Montserrat; -fx-font-size: 24;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
+                     <children>
+                        <Label fx:id="labelPay" prefWidth="63.0" text="Uang Diberi">
+                           <HBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="69.0" prefWidth="300.0">
+                           <children>
+                              <Label fx:id="error_pay" prefHeight="35.0" prefWidth="300.0" textFill="#e90000">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textFieldPay" onAction="#countChange" prefHeight="51.0" prefWidth="199.0" promptText="Contoh: 20000" style="-fx-font-family: Montserrat; -fx-font-size: 24;" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
+                     <children>
+                        <Label fx:id="labelChange" text="Kembalian">
+                           <HBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="textFieldChange" editable="false" prefHeight="50.0" prefWidth="300.0" promptText="Tekan &quot;Enter&quot; untuk melihat kembalian" style="-fx-font-family: Montserrat; -fx-font-size: 24;" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="695.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#batal" prefHeight="45.0" prefWidth="109.0" style="-fx-background-color: IndianRed;" text="Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="buttonBayar" mnemonicParsing="false" onAction="#payment" prefHeight="45.0" prefWidth="198.0" text="Bayar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
