@@ -1,4 +1,4 @@
-#**Balance Changes**
+# **Balance Changes**
 
 > [!NOTE]
 > There are 3 files for the main Java app
