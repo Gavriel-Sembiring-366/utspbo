@@ -1,10 +1,5 @@
 ```Balance Changes 02 April 2024```
 
-> [!NOTE]
-> - activity log belum ada.
-> 
-> - purchase log belum ada.
-
 update **pom.xml** file to include database dependancy
 
 update ***product_java*** file for guide to creating database
