@@ -1,5 +1,6 @@
 package oop;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,94 +17,79 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class LogInController {
 
-    @FXML
-    private Label labelTitle;
-    @FXML
-    private Text textTitle;
-    @FXML
-    private TextField textFieldUsername;
-    @FXML
-    private TextField textFieldPassword;
-    @FXML
-    private Hyperlink noAcc;
-    @FXML
-    private Hyperlink adminAcc;
-    @FXML
-    private Button buttonLogin;
+public class LoginAdminController {
+    @FXML private Label labelTitle;
+    @FXML private Text textTitle;
+    @FXML private TextField textFieldUsername;
+    @FXML private TextField textFieldPassword;
+    @FXML private Hyperlink noAcc;
+    @FXML private Button buttonLogin;
 
-    public void initialize() {
+    public void initialize(){
         ObservableList<TextField> textFields = FXCollections.observableArrayList(
-                textFieldUsername,
-                textFieldPassword);
+            textFieldUsername,
+            textFieldPassword
+        );
         ObservableList<Label> labels = FXCollections.observableArrayList(
-                labelTitle);
+            labelTitle
+        );
         ObservableList<Button> buttons = FXCollections.observableArrayList(
-                buttonLogin);
+            buttonLogin
+        );
 
-        textFields.forEach(textField -> {
-            textField.fontProperty().set(App.Montserrat(24));
-        });
-        labels.forEach(label -> {
-            label.fontProperty().set(App.Montserrat(56));
-        }); // 14
-        buttons.forEach(button -> {
-            button.fontProperty().set(App.Montserrat(18));
-        });
+        textFields.forEach(textField -> {textField.fontProperty().set(App.Montserrat(24));});
+        labels.forEach(label->{label.fontProperty().set(App.Montserrat(56));}); //14
+        buttons.forEach(button->{button.fontProperty().set(App.Montserrat(18));});
         noAcc.fontProperty().set(App.Montserrat(13));
         textTitle.fontProperty().set(App.Montserrat(56));
     }
 
     private void _actionSwap() throws IOException {
-        FXMLLoader loader = App.getFXML("login");
-        Parent parent = loader.load();
-        LogInController loginCtrl = loader.getController();
-        loginCtrl.operationSwap(textTitle.getText());
-        App.setRootWithParent(parent);
-    }
-
-    @FXML
-    private void actiongotoadmin() throws IOException {
         FXMLLoader loader = App.getFXML("login_admin");
         Parent parent = loader.load();
+        LoginAdminController loginAdmCtrl = loader.getController();
+        loginAdmCtrl.operationSwap( textTitle.getText());
         App.setRootWithParent(parent);
     }
-
-    private void operationSwap(String arg0) {
-        if (arg0.equals("Log In")) {
+    
+    private void operationSwap(String arg0){
+        if( arg0.equals("Log In")){
             textTitle.setText("Sign In");
             buttonLogin.setText("Sign In");
             noAcc.setText("Already have account?");
         }
-
         // g guna cuma gpp
-        else if (arg0.equals("Sign In")) {
-            textTitle.setText("Log In");
+        else if( arg0.equals("Sign In")){
+             textTitle.setText("Log In");
             buttonLogin.setText("Log In");
         }
     }
 
-    private boolean userValidator(String username, String password, String opt) {
+    private boolean userValidator(String username, String password, String opt)
+    {
         DBConnector.initDBConnection();
         try {
             Statement stmt = DBConnector.connect.createStatement();
-            String sql = "SELECT * FROM user WHERE username LIKE '" + username + "';";
+            String sql = "SELECT * FROM admin WHERE username LIKE '" + username + "';";
             ResultSet rs = stmt.executeQuery(sql);
-            if (opt.equals("Log In")) {
+            if(opt.equals("Log In")){
                 return rs.next() && (password.hashCode() == rs.getInt("password"));
-            } else if (opt.equals("Sign In")) {
+            }
+            else if(opt.equals("Sign In")){
                 return !rs.next();
             }
-        } catch (SQLException sqlError) {
+        }
+        catch (SQLException sqlError)
+        {
             System.out.println("sql error : " + sqlError);
         }
         return false;
     }
-
+    
     @FXML
     public void actionLogIn() throws IOException, SQLException {
-        String actionType = textTitle.getText();
+        String actionType =  textTitle.getText();
         String username = textFieldUsername.getText();
         String password = textFieldPassword.getText();
 
@@ -111,13 +97,13 @@ public class LogInController {
         System.out.println("valid : " + isValid);
 
         Statement stmt = DBConnector.connect.createStatement();
-        if (isValid) {
-            if (actionType.equals("Log In")) {
-                App.setRoot("counter");
-            } else if (actionType.equals("Sign In")) {
+        if (isValid){
+            if(actionType.equals("Log In")){
+                App.setRoot("admin");
+            }
+            else if(actionType.equals("Sign In")){
                 System.out.println("Account successfully made");
-                String sql = "INSERT INTO user (username, password) VALUES(" + "'" + username + "', "
-                        + password.hashCode() + ")";
+                String sql = "INSERT INTO admin (username, password) VALUES("+ "'" + username+ "', " + password.hashCode() +")";
                 stmt.executeUpdate(sql);
                 _actionSwap();
             }
@@ -128,5 +114,5 @@ public class LogInController {
     private void actionSwap() throws IOException {
         _actionSwap();
     }
-
 }
+

@@ -4,10 +4,8 @@ public class Purchase {
     public int table_no;
     public String table_kode;
     public String table_nama;
-    // public int table_harga;
     public float table_harga;
     public int table_jumlah;
-    // public int table_total;
     public float table_total;
     
     public Purchase(){
@@ -27,6 +25,13 @@ public class Purchase {
             this.table_jumlah = jumlah;
             this.table_total = total;
         }
+
+        public Purchase(String kode, String nama, float harga){
+            this.table_kode = kode;
+            this.table_nama = nama;
+            this.table_harga = harga;
+        }
+
         public int getTable_no() {return table_no;}
         public String getTable_kode() {return table_kode;}
         public String getTable_nama() {return table_nama;}

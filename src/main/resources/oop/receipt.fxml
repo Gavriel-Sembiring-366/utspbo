@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.receiptController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" style="-fx-background-color: #44797a;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 56; -fx-fill: #ffffff;" text="Terima Kasih">
+               <font>
+                  <Font size="54.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="tableViewItem" prefHeight="274.0" prefWidth="531.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin></TableView>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+   </children>
+</VBox>

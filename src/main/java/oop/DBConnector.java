@@ -21,7 +21,7 @@ public class DBConnector {
                 System.out.println("Connection established");
             }
         } catch (Exception ex) {
-            System.out.println(ex);
+            // System.out.println(ex);
         }
     }
 }

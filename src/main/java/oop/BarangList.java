@@ -10,7 +10,6 @@ import javafx.collections.ObservableList;
 public class BarangList {
     public String kode;    
     public String nama;    
-    // public int harga;
     public float harga;
 
     public static Dictionary<String, Integer> loadItem() {
@@ -30,11 +29,6 @@ public class BarangList {
         this.nama = "nama";
         this.harga = 0;
     }
-    // public BarangList(String kode, String nama, int harga){
-    //     this.kode = kode;
-    //     this.nama = nama;
-    //     this.harga = harga;
-    // }
     public BarangList(String kode, String nama, float harga){
         this.kode = kode;
         this.nama = nama;
