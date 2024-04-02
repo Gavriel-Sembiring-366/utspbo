@@ -1,4 +1,4 @@
-[!NOTE]
+> [!NOTE]
 > There are 3 files for the main Java app
 >
 > MyKasir.zip contains MyKasir App both for Client and Server/Admin
