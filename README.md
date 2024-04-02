@@ -1,4 +1,4 @@
-```Balance Changes 31 Maret 2024```
+```Balance Changes 02 April 2024```
 
 > [!CAUTION]
 > - activity log belum ada.
@@ -18,10 +18,10 @@ update **src** folder
         
 - adminis
   - [x] item entry
-  - [ ] activity log
-  - [ ] purchase log
+  - [x] activity log
+  - [x] purchase log
 
 - checkout
-  - [x] thousand separator
+  - [ ] thousand separator
   - [x] calculate change
-  - [ ] receipt
+  - [x] receipt
