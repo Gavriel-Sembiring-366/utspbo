@@ -7,7 +7,7 @@
 >
 > MyKasir.zip contains both files from above.
 
-> {!IMPORTANT]
+> [!IMPORTANT]
 > Database is required to run both version of MyKasir.
 >
 > Database is hosted in MySql (PhpMyAdmin).
