@@ -1,6 +1,6 @@
 ```Balance Changes 02 April 2024```
 
-> [!CAUTION]
+> [!NOTE]
 > - activity log belum ada.
 > 
 > - purchase log belum ada.
