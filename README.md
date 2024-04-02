@@ -1,3 +1,5 @@
+#**Balance Changes**
+
 > [!NOTE]
 > There are 3 files for the main Java app
 >
@@ -12,17 +14,17 @@
 >
 > Database is hosted in MySql (PhpMyAdmin).
 >
-> Import database from product_java.sql
+> Import database from product_java.sql.
 
 > [!TIP]
-> username and password for client side :
+> username and password for client side (from product_java.sql):
 > 
 > username : healm
 >
 > password : healm
 
 > [!TIP]
-> username and password for server side :
+> username and password for server side (from product_java.sql):
 > 
 > username : admin
 >
