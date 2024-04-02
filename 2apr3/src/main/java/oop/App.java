@@ -54,8 +54,15 @@ public class App extends Application {
         LocalDateTime time = LocalDateTime.now();
         return dtf.format(time).toString();
     }
+
+    static String intThousandSeparator(int x){
+        return String.format("%,d", x);
+    }
+    static String floatThousandSeparator(float x){
+        String y = Float.toString(x).replace(".0","");
+        return String.format("%,d", Integer.parseInt(y)) + ".0";
+    }
     public static void main(String[] args) {
         launch();
     }
-    
 }
